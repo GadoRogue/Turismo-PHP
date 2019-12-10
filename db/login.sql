@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.9.1
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-03-2017 a las 18:02:21
--- Versión del servidor: 10.1.16-MariaDB
--- Versión de PHP: 7.0.9
+-- Tiempo de generación: 10-12-2019 a las 04:26:24
+-- Versión del servidor: 10.4.8-MariaDB
+-- Versión de PHP: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,6 +21,19 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `login`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `lugares`
+--
+
+CREATE TABLE `lugares` (
+  `idLugar` int(15) NOT NULL,
+  `nombre` varchar(500) NOT NULL,
+  `dias` varchar(500) NOT NULL,
+  `precio` float(15,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -39,11 +54,18 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `email`, `clave`, `cargo`) VALUES
-(1, 'Gadiel Bacarreza', 'web@gmail.com', '202cb962ac59075b964b07152d234b70', '1');
+(1, 'Gadiel Bacarreza', 'web@gmail.com', '202cb962ac59075b964b07152d234b70', '1'),
+(3, 'gadiel', 'gadiel@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `lugares`
+--
+ALTER TABLE `lugares`
+  ADD PRIMARY KEY (`idLugar`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -56,10 +78,18 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `lugares`
+--
+ALTER TABLE `lugares`
+  MODIFY `idLugar` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

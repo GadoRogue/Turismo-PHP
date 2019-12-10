@@ -37,11 +37,10 @@
 			</row>
 			<hr>
 			<row class="row">
-				<?php require ("model/conexion.php");
-
-				$conectar = mysqli_connect("localhost", "root", "", "login");
-				$consulta = "SELECT idLugar, nombre, dias, precio FROM lugares";
-				$resultado = mysqli_query($conectar, $consulta);  ?>
+				<?php require ("conexion1.php");
+					$var_consulta= "SELECT * FROM lugares ";
+					$var_resultado = $obj_conexion->query($var_consulta);
+					?>
 				<table class="table table-hover">
 					<thead>
 						<tr>
@@ -51,12 +50,12 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php while ($registros = mysqli_fetch_array($resultado)) { ?>
+						<?php while ($var_fila=$var_resultado->fetch_array()) { ?>
 						<tr>
-							<td><font size="3" face="Arial Narrow" color="00ccff"><?php echo $registros['idLugar']; ?></font></td>
-							<td><font size="3" face="Arial Narrow" color="00ccff"><?php echo $registros['nombre']; ?></font></td>
-							<td><font size="3" face="Arial Narrow" color="00ccff"><?php echo $registros['precio']; ?></font></td>
-							<td><?php echo"<a href='modificar.php?id=".$registros['idLugar']."'>modificar</a>"; ?><br><?php echo"<a href='baja.php?id=".$registros['idLugar']."'>eliminar</a>"; ?></td>
+							<td><font size="3" face="Arial Narrow" color="00ccff"><?php echo $var_fila['idLugar']; ?></font></td>
+							<td><font size="3" face="Arial Narrow" color="00ccff"><?php echo $var_fila['nombre']; ?></font></td>
+							<td><font size="3" face="Arial Narrow" color="00ccff"><?php echo $var_fila['precio']; ?></font></td>
+							<td><?php echo"<a href='modificar.php?id=".$var_fila['idLugar']."'>modificar</a>"; ?><br><?php echo"<a href='baja.php?id=".$var_fila['idLugar']."'>eliminar</a>"; ?></td>
 						</tr><?php } ?>
 					</tbody>
 				</table>

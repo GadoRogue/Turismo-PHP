@@ -13,11 +13,11 @@
 	<body background=" fondo3.jpg">
 
 <?php 
-require("model/conexion.php");
-$idl=$_GET['id'];
-$consulta="DELETE FROM peliculas WHERE IdLugar = '$idl'";
-$conectar = mysqli_connect("localhost", "root", "", "login");
-$terminado=mysqli_query($conectar, $consulta);
+require("conexion1.php");
+$idp=$_GET['id'];
+
+	$var_consulta= "DELETE FROM lugares WHERE idLugar = '$idp'";
+	$var_resultado = $obj_conexion->query($var_consulta);
  echo"Elimnado"; ?>
 
  ?>

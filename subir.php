@@ -1,9 +1,11 @@
 <?php
-require("model/conexion.php");
+require("conexion1.php");
 $nomLugar=$_POST['nombre'];
-$gen=$_POST['genero'];
+$gen=$_POST['dias'];
 $price=$_POST['precio'];
 
-mysqli_query("INSERT INTO  lugares (nombre,dias,precio) VALUES ('$nomLugar','$gen',$price')");
+$var_consulta= "INSERT INTO lugares (nombre,dias,precio) VALUES ('$nomLugar','$gen','$price')";
+$obj_conexion->query($var_consulta);
+
  header("Location:mensaje.php");
 ?>
