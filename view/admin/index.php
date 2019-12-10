@@ -23,8 +23,8 @@
      <a href="../../Inicio.html">
      <button type="button" name="button">Ingresar a la pagina</button>
     </a>
-    <a href="../../ventas_pdo/index.php">
-     <button type="button" name="button">Ver las ventas realizadas</button>
+    <a href="../../agregar.php">
+     <button type="button" name="button">Agregar un lugar</button>
     </a>
   </body>
 </html>

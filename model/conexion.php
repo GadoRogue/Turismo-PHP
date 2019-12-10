@@ -10,6 +10,7 @@
         private $clave = '';
         private $server = 'localhost';
         private $db = 'login';
+        
 
 
         # Funcion que permite conectarnos a la base de datos
